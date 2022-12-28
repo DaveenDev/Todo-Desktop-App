@@ -6,12 +6,12 @@ gui.theme("DarkBlue2")
 time_label = gui.Text('Time', key="time_label")
 label = gui.Text("Type in a to-do")
 input_box = gui.InputText(tooltip="Enter a todo", key="todo")
-add_button = gui.Button("Add")
+add_button = gui.Button(key="Add",size=20, image_source="images/add.png", tooltip="Add new todo")
 
 list_box = gui.Listbox(values=functions.get_todos(), key="todos",
                        enable_events=True, size=[45,10])
 edit_button = gui.Button("Edit")
-complete_btn = gui.Button("Complete")
+complete_btn = gui.Button(key="Complete", image_source="images/complete.png", tooltip="Complete")
 exit_button = gui.Button("Exit")
 window = gui.Window("My Todo App",
                     layout=[[time_label],
