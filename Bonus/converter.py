@@ -16,11 +16,14 @@ while True:
 
     match event:
         case "Convert":
-            feet = float(values["feet"])
-            inches = float(values["inches"])
-            total_inches = (feet * 12) + inches
-            meter = total_inches * 0.0254
-            window["status"].update(value=f"{meter} m")
+            try:
+                feet = float(values["feet"])
+                inches = float(values["inches"])
+                total_inches = (feet * 12) + inches
+                meter = total_inches * 0.0254
+                window["status"].update(value=f"{meter} m")
+            except ValueError:
+                gui.popup(("Please provide two numbers."))
         case gui.WIN_CLOSED:
             break
 window.close()
